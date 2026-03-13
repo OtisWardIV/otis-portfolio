@@ -281,48 +281,6 @@ export default function Home() {
         </InfoCard>
       </section>
 
-      <section className="space-y-5">
-        <div className="space-y-2">
-          <p className="font-pixel text-[10px] text-accent">FAVORITE MUSIC</p>
-          <h2 className="text-3xl font-semibold tracking-tight text-ink">
-            Soundtrack of my life
-          </h2>
-        </div>
-
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {musicData.map((artist) => (
-            <MusicCard
-              key={artist.artist}
-              artist={artist.artist}
-              track={artist.track}
-              image={artist.image}
-              isPlaying={playingArtist === artist.artist}
-              onToggle={() => togglePreview(artist.artist, artist.previewUrl)}
-            />
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-5">
-        <div className="space-y-2">
-          <p className="font-pixel text-[10px] text-accent">FAVORITE GAMES</p>
-          <h2 className="text-3xl font-semibold tracking-tight text-ink">
-            Cartridge collection
-          </h2>
-        </div>
-
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {games.map((game) => (
-            <CartridgeCard
-              key={game.title}
-              title={game.title}
-              image={game.image}
-              accent={game.accent}
-            />
-          ))}
-        </div>
-      </section>
-
       <section className="space-y-6">
         <div className="space-y-2">
           <p className="font-pixel text-[10px] text-accent">MEDIA</p>
@@ -391,6 +349,50 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="space-y-5">
+        <div className="space-y-2">
+          <p className="font-pixel text-[10px] text-accent">FAVORITE MUSIC</p>
+          <h2 className="text-3xl font-semibold tracking-tight text-ink">
+            Soundtrack of my life
+          </h2>
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {musicData.map((artist) => (
+            <MusicCard
+              key={artist.artist}
+              artist={artist.artist}
+              track={artist.track}
+              image={artist.image}
+              isPlaying={playingArtist === artist.artist}
+              onToggle={() => togglePreview(artist.artist, artist.previewUrl)}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-5">
+        <div className="space-y-2">
+          <p className="font-pixel text-[10px] text-accent">FAVORITE GAMES</p>
+          <h2 className="text-3xl font-semibold tracking-tight text-ink">
+            Cartridge collection
+          </h2>
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {games.map((game) => (
+            <CartridgeCard
+              key={game.title}
+              title={game.title}
+              image={game.image}
+              accent={game.accent}
+            />
+          ))}
+        </div>
+      </section>
+
+
 
       <audio ref={audioRef} onEnded={() => setPlayingArtist(null)} />
     </div>

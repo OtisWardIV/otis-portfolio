@@ -17,7 +17,10 @@ const pixel = Press_Start_2P({
 
 export const metadata: Metadata = {
   title: "Otis Ward | Portfolio",
-  description: "CS x Design portfolio by Otis Ward",
+  description: "Design Engineering student at Stanford building at the intersection of software, product design, and human-centered experiences.",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
